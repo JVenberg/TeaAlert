@@ -5,6 +5,7 @@
         ".read": "auth !== null && auth.uid === $uid",
         ".write": "auth !== null && auth.uid === $uid && !data.exists()",
         "timestamp": {
+          ".read": "query.orderByValue === true && query.limitToLast === 7200",
           ".indexOn": [
             ".value"
           ]
